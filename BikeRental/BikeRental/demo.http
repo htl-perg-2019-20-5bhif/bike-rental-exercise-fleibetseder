@@ -1,0 +1,39 @@
+@host = http://localhost:5000/api
+
+###
+POST {{host}}/customers
+Content-Type: application/json
+
+{
+    "gender": "Male",
+    "firstname": "Felix",
+    "lastname": "Leibetseder",
+    "birthday": "2000-11-23T00:00:00",
+    "street": "Strasse",
+    "houseNumber": 1,
+    "zipCode": 4000,
+    "town": "Hometown"
+}
+
+###
+GET {{host}}/customers?lastName=Leibetseder
+
+GET {{host}}/customers/1/rentals
+
+###
+POST {{host}}/bikes
+Content-Type: application/json
+
+{
+    "brand": "KTM",
+    "purchaseDate": "2020-11-23T00:00:00",
+    "notes": "is very fast",
+    "rentalPriceFirstHour": 10,
+    "rentalPriceAdditionalHour":5,
+    "bikeCategory": "StreetRacer"
+}
+
+
+###
+GET {{host}}/rentals/unpaid
+
